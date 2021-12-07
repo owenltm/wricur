@@ -14,6 +14,7 @@
 		CE78863A275DD1FD00391829 /* wricur.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE788638275DD1FD00391829 /* wricur.xcdatamodeld */; };
 		CE78863C275DD1FF00391829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE78863B275DD1FF00391829 /* Assets.xcassets */; };
 		CE78863F275DD1FF00391829 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE78863D275DD1FF00391829 /* LaunchScreen.storyboard */; };
+		E6545A99275FBC49005C7A69 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545A98275FBC49005C7A69 /* CreateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CE78863B275DD1FF00391829 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE78863E275DD1FF00391829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE788640275DD1FF00391829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6545A98275FBC49005C7A69 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				CE788635275DD1FD00391829 /* Main.storyboard */,
 				CE78863B275DD1FF00391829 /* Assets.xcassets */,
 				CE78863D275DD1FF00391829 /* LaunchScreen.storyboard */,
+				E6545A98275FBC49005C7A69 /* CreateViewController.swift */,
 				CE788640275DD1FF00391829 /* Info.plist */,
 				CE788638275DD1FD00391829 /* wricur.xcdatamodeld */,
 				B77A4E6C275F737D00B2A2DF /* ProfileViewController.swift */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6545A99275FBC49005C7A69 /* CreateViewController.swift in Sources */,
 				CE78863A275DD1FD00391829 /* wricur.xcdatamodeld in Sources */,
 				CE788634275DD1FD00391829 /* ViewController.swift in Sources */,
 				B77A4E6D275F737D00B2A2DF /* ProfileViewController.swift in Sources */,
