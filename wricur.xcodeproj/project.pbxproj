@@ -14,6 +14,10 @@
 		CE78863A275DD1FD00391829 /* wricur.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE788638275DD1FD00391829 /* wricur.xcdatamodeld */; };
 		CE78863C275DD1FF00391829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE78863B275DD1FF00391829 /* Assets.xcassets */; };
 		CE78863F275DD1FF00391829 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE78863D275DD1FF00391829 /* LaunchScreen.storyboard */; };
+		CE99A9B9276491C0007FB0AF /* CurhatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99A9B8276491C0007FB0AF /* CurhatTableViewCell.swift */; };
+		CED24B642764887D0020038F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED24B632764887D0020038F /* HomeViewController.swift */; };
+		CED24B66276489F50020038F /* Curhat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED24B65276489F50020038F /* Curhat.swift */; };
+		CED24B6827648C530020038F /* OwnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED24B6727648C530020038F /* OwnViewController.swift */; };
 		E64DE7182761142C0007AC0B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64DE7172761142C0007AC0B /* EditViewController.swift */; };
 		E6545A99275FBC49005C7A69 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545A98275FBC49005C7A69 /* CreateViewController.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +32,10 @@
 		CE78863B275DD1FF00391829 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE78863E275DD1FF00391829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE788640275DD1FF00391829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE99A9B8276491C0007FB0AF /* CurhatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurhatTableViewCell.swift; sourceTree = "<group>"; };
+		CED24B632764887D0020038F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CED24B65276489F50020038F /* Curhat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curhat.swift; sourceTree = "<group>"; };
+		CED24B6727648C530020038F /* OwnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnViewController.swift; sourceTree = "<group>"; };
 		E64DE7172761142C0007AC0B /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		E6545A98275FBC49005C7A69 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +80,10 @@
 				CE788640275DD1FF00391829 /* Info.plist */,
 				CE788638275DD1FD00391829 /* wricur.xcdatamodeld */,
 				B77A4E6C275F737D00B2A2DF /* ProfileViewController.swift */,
+				CED24B632764887D0020038F /* HomeViewController.swift */,
+				CED24B65276489F50020038F /* Curhat.swift */,
+				CED24B6727648C530020038F /* OwnViewController.swift */,
+				CE99A9B8276491C0007FB0AF /* CurhatTableViewCell.swift */,
 			);
 			path = wricur;
 			sourceTree = "<group>";
@@ -149,9 +161,13 @@
 			files = (
 				E6545A99275FBC49005C7A69 /* CreateViewController.swift in Sources */,
 				CE78863A275DD1FD00391829 /* wricur.xcdatamodeld in Sources */,
+				CE99A9B9276491C0007FB0AF /* CurhatTableViewCell.swift in Sources */,
 				E64DE7182761142C0007AC0B /* EditViewController.swift in Sources */,
+				CED24B6827648C530020038F /* OwnViewController.swift in Sources */,
 				CE788634275DD1FD00391829 /* ViewController.swift in Sources */,
 				B77A4E6D275F737D00B2A2DF /* ProfileViewController.swift in Sources */,
+				CED24B642764887D0020038F /* HomeViewController.swift in Sources */,
+				CED24B66276489F50020038F /* Curhat.swift in Sources */,
 				CE788632275DD1FD00391829 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
