@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05204C11276DDC49001F46E5 /* Login Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05204C10276DDC49001F46E5 /* Login Scene.swift */; };
+		05204C13276DDC95001F46E5 /* Register Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05204C12276DDC95001F46E5 /* Register Scene.swift */; };
 		B77A4E6D275F737D00B2A2DF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77A4E6C275F737D00B2A2DF /* ProfileViewController.swift */; };
 		CE788632275DD1FD00391829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE788631275DD1FD00391829 /* AppDelegate.swift */; };
 		CE788634275DD1FD00391829 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE788633275DD1FD00391829 /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05204C10276DDC49001F46E5 /* Login Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login Scene.swift"; sourceTree = "<group>"; };
+		05204C12276DDC95001F46E5 /* Register Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Register Scene.swift"; sourceTree = "<group>"; };
 		B77A4E6C275F737D00B2A2DF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		CE78862E275DD1FD00391829 /* wricur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wricur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE788631275DD1FD00391829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				CED24B65276489F50020038F /* Curhat.swift */,
 				CED24B6727648C530020038F /* OwnViewController.swift */,
 				CE99A9B8276491C0007FB0AF /* CurhatTableViewCell.swift */,
+				05204C10276DDC49001F46E5 /* Login Scene.swift */,
+				05204C12276DDC95001F46E5 /* Register Scene.swift */,
 			);
 			path = wricur;
 			sourceTree = "<group>";
@@ -165,7 +171,9 @@
 				E64DE7182761142C0007AC0B /* EditViewController.swift in Sources */,
 				CED24B6827648C530020038F /* OwnViewController.swift in Sources */,
 				CE788634275DD1FD00391829 /* ViewController.swift in Sources */,
+				05204C13276DDC95001F46E5 /* Register Scene.swift in Sources */,
 				B77A4E6D275F737D00B2A2DF /* ProfileViewController.swift in Sources */,
+				05204C11276DDC49001F46E5 /* Login Scene.swift in Sources */,
 				CED24B642764887D0020038F /* HomeViewController.swift in Sources */,
 				CED24B66276489F50020038F /* Curhat.swift in Sources */,
 				CE788632275DD1FD00391829 /* AppDelegate.swift in Sources */,
