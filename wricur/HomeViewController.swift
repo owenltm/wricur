@@ -22,6 +22,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
 
         // Dummy data
         //curhatList.append(Curhat(name: "Alex", body: "This is an example of a curhat text that is supposed to be long but i dont really prepare a sample text therefore im putting this random words as a placeholder", isHidden: false))
+        // test change
         
         curhatTableView.dataSource = self
         
