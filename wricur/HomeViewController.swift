@@ -35,9 +35,9 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         let entity = NSEntityDescription.entity(forEntityName: "CurhatEntity", in: context)
         let newCurhat = NSManagedObject(entity: entity!, insertInto: context)
         
-        newCurhat.setValue(1, forKey: "idCurhat")
-        newCurhat.setValue(1, forKey: "idAccount")
-        newCurhat.setValue("test long text in place of a curhat that i still havent prepared so i put this long text as a placeholder", forKey: "curhat")
+        newCurhat.setValue(3, forKey: "idCurhat")
+        newCurhat.setValue(2, forKey: "idAccount")
+        newCurhat.setValue("222 test long text in place of a curhat that i still havent prepared so i put this long text as a placeholder", forKey: "curhat")
         newCurhat.setValue(false, forKey: "isHidden")
         
         do {
