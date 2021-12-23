@@ -9,7 +9,8 @@
 import Foundation
 
 struct Curhat {
-    var name: String
-    var body: String
-    var isHidden: Bool
+    var idCurhat: Int       //idCurhat  (FK)
+    var idUser: Int         //idAccount (PK)
+    var body: String        //curhat
+    var isHidden: Bool      //informationtype
 }

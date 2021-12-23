@@ -18,8 +18,8 @@ class OwnViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
 
         // Dummy data
-        curhatList.append(Curhat(name: "Alex", body: "This is an example of a text tht is supposed to be long but i dont really prepare a sample text therefore im putting this random words as a placeholder", isHidden: false))
-        curhatList.append(Curhat(name: "Kevin", body: "This is an example of a text tht is supposed to be long but i dont really prepare a sample text therefore im putting this random words as a placeholder", isHidden: true))
+        //curhatList.append(Curhat(name: "Alex", body: "This is an example of a text tht is supposed to be long but i dont really prepare a sample text therefore im putting this random words as a placeholder", isHidden: false))
+        //curhatList.append(Curhat(name: "Kevin", body: "This is an example of a text tht is supposed to be long but i dont really prepare a sample text therefore im putting this random words as a placeholder", isHidden: true))
         
         curhatTableView.dataSource = self
     }
@@ -35,8 +35,8 @@ class OwnViewController: UIViewController, UITableViewDataSource {
         
         let curCurhat = curhatList[indexPath.row]
         
-        cell.titleLbl.text = curCurhat.isHidden ? "Anonymous" : curCurhat.name
-        cell.subtitleLbl.text = curCurhat.body
+        //cell.titleLbl.text = curCurhat.isHidden ? "Anonymous" : curCurhat.name
+        //cell.subtitleLbl.text = curCurhat.body
         
         return cell
     }
