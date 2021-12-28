@@ -47,15 +47,22 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    var account: AccountEntity?
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "goToHome" {
+            let dest = segue.destination as! HomeViewController
+            
+            dest.account = account
+        } else if segue.identifier == "goToOwned" {
+            let dest = segue.destination as! OwnViewController
+            
+            dest.account = account
+        } else if segue.identifier == "goToCreate" {
+            let dest = segue.destination as! CreateViewController
+            
+            dest.account = account
+        }
     }
-    */
 
 }

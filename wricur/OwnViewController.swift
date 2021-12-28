@@ -16,6 +16,7 @@ class OwnViewController: UIViewController, UITableViewDataSource {
     @IBOutlet var curhatTableView: UITableView!
     
     var curhatList = [Curhat]()
+    var account: AccountEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +28,25 @@ class OwnViewController: UIViewController, UITableViewDataSource {
         
         context = appDelegate.persistentContainer.viewContext
         
-        curhatList = loadCurhatFromId(id: 2)
+        //curhatList = loadCurhatFromId(id: 2)
     }
     
-    //    TODO: GET LIST OF CURHAT FROM CORE DATA
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToHome" {
+            let dest = segue.destination as! HomeViewController
+            
+            dest.account = account
+        } else if segue.identifier == "goToCreate" {
+            let dest = segue.destination as! CreateViewController
+            
+            dest.account = account
+        } else if segue.identifier == "goToProfile" {
+            let dest = segue.destination as! ProfileViewController
+            
+            dest.account = account
+        }
+    }
+    
     func loadCurhatFromId(id: Int)->[Curhat] {
         var fetchedCurhat = [Curhat]()
         

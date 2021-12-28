@@ -16,6 +16,8 @@ class Login_Scene: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var context: NSManagedObjectContext!
     
+    var account: AccountEntity?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +28,9 @@ class Login_Scene: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToHome" {
-            //let dest = segue.destination as
+            let dest = segue.destination as! HomeViewController
+            
+            dest.account = account!
         }
     }
     
@@ -46,8 +50,9 @@ class Login_Scene: UIViewController {
                 if item.password == password {
                     //email ada passwordnya bener
                     
-                    print("Berhasil Login")
-                    //performSegue(withIdentifier: "goToHome", sender: self)
+                    //print("Berhasil Login")
+                    account = item
+                    performSegue(withIdentifier: "goToHome", sender: self)
                 } else {
                     print("password salah")
                 }
@@ -65,7 +70,7 @@ class Login_Scene: UIViewController {
             let results = try context.fetch(req)
             
             for item in results {
-                print("\(item.email as! String) \(item.email as! String)")
+                print("\(item.email as! String) \(item.password as! String)")
             }
         } catch {
             print("ERROR) Failed loading data")

@@ -12,6 +12,9 @@ class CreateViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var Reveal: UISwitch!
     @IBOutlet weak var TextView: UITextView!
+    
+    var account: AccountEntity?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         TextView.layer.borderColor = UIColor.black.cgColor
@@ -20,6 +23,23 @@ class CreateViewController: UIViewController, UITextViewDelegate {
         TextView.text = "Write your text here"
         TextView.delegate = self
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToHome" {
+            let dest = segue.destination as! HomeViewController
+            
+            dest.account = account
+        } else if segue.identifier == "goToOwned" {
+            let dest = segue.destination as! OwnViewController
+            
+            dest.account = account
+        } else if segue.identifier == "goToProfile" {
+            let dest = segue.destination as! ProfileViewController
+            
+            dest.account = account
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         TextView.resignFirstResponder()
     }

@@ -30,7 +30,7 @@ class Register_Scene: UIViewController {
         
         //validasi form
         
-        var newAccount = AccountEntity(idAccount: 0, email: email, password: password, fullname: fullname, dob: dob)
+        var newAccount = AccountEntity(idAccount: 0.0, email: email, password: password, fullname: fullname, dob: dob)
         
         do {
             try newAccount?.managedObjectContext?.save()
