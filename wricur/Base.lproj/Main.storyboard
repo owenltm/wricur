@@ -84,7 +84,7 @@
                                         <rect key="frame" x="298" y="8" width="27" height="26"/>
                                         <state key="normal" image="profile"/>
                                         <connections>
-                                            <segue destination="fZ3-RK-kTR" kind="showDetail" id="yPI-B8-NR6"/>
+                                            <segue destination="fZ3-RK-kTR" kind="showDetail" identifier="goToProfile" id="yPI-B8-NR6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIu-C0-0Nh">
@@ -92,7 +92,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="Home"/>
                                         <connections>
-                                            <segue destination="mAv-6X-9ry" kind="showDetail" id="hwk-W2-ybS"/>
+                                            <segue destination="mAv-6X-9ry" kind="showDetail" identifier="goToHome" id="hwk-W2-ybS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICc-Ij-6DL">
@@ -524,14 +524,14 @@
                                         <rect key="frame" x="218" y="8" width="30" height="29"/>
                                         <state key="normal" image="Create"/>
                                         <connections>
-                                            <segue destination="Mno-Q6-Jb3" kind="showDetail" id="jlW-AW-EiU"/>
+                                            <segue destination="Mno-Q6-Jb3" kind="showDetail" identifier="goToCreate" id="jlW-AW-EiU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOM-A3-OpU">
                                         <rect key="frame" x="298" y="8" width="27" height="26"/>
                                         <state key="normal" image="profile"/>
                                         <connections>
-                                            <segue destination="fZ3-RK-kTR" kind="showDetail" id="j2g-VH-Y2d"/>
+                                            <segue destination="fZ3-RK-kTR" kind="showDetail" identifier="goToProfile" id="j2g-VH-Y2d"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybY-PC-FFj">
@@ -543,7 +543,7 @@
                                         <rect key="frame" x="128" y="8" width="26" height="24"/>
                                         <state key="normal" image="owncurhat"/>
                                         <connections>
-                                            <segue destination="ASm-AN-MKk" kind="showDetail" id="f2B-I7-3Ud"/>
+                                            <segue destination="ASm-AN-MKk" kind="showDetail" identifier="goToOwned" id="f2B-I7-3Ud"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqp-4e-dJ0">
@@ -691,7 +691,7 @@
                                         <rect key="frame" x="298" y="8" width="27" height="26"/>
                                         <state key="normal" image="profile"/>
                                         <connections>
-                                            <segue destination="fZ3-RK-kTR" kind="showDetail" id="Miw-fi-7tJ"/>
+                                            <segue destination="fZ3-RK-kTR" kind="showDetail" identifier="goToProfile" id="Miw-fi-7tJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aW0-mk-RhQ">
@@ -699,14 +699,14 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="Home"/>
                                         <connections>
-                                            <segue destination="mAv-6X-9ry" kind="showDetail" id="vnM-iS-mHt"/>
+                                            <segue destination="mAv-6X-9ry" kind="showDetail" identifier="goToHome" id="vnM-iS-mHt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpZ-Nu-Ifq">
                                         <rect key="frame" x="128" y="8" width="26" height="24"/>
                                         <state key="normal" image="owncurhat"/>
                                         <connections>
-                                            <segue destination="ASm-AN-MKk" kind="showDetail" id="6sG-yQ-sEh"/>
+                                            <segue destination="ASm-AN-MKk" kind="showDetail" identifier="goToOwned" id="6sG-yQ-sEh"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cia-du-bur">
@@ -908,7 +908,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" image="Create"/>
                                         <connections>
-                                            <segue destination="Mno-Q6-Jb3" kind="showDetail" identifier="goToCreae" id="wKS-iz-4Gf"/>
+                                            <segue destination="Mno-Q6-Jb3" kind="showDetail" identifier="goToCreate" id="wKS-iz-4Gf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KN-ZT-Lig">
@@ -920,7 +920,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="Home"/>
                                         <connections>
-                                            <segue destination="mAv-6X-9ry" kind="showDetail" id="h4F-0q-f8g"/>
+                                            <segue destination="mAv-6X-9ry" kind="showDetail" identifier="goToHome" id="h4F-0q-f8g"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NJ-3u-wvx">
@@ -1146,8 +1146,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yPI-B8-NR6"/>
-        <segue reference="KWE-zc-y6t"/>
-        <segue reference="MMX-dl-JOW"/>
+        <segue reference="jlW-AW-EiU"/>
+        <segue reference="h4F-0q-f8g"/>
         <segue reference="zB9-NQ-R89"/>
     </inferredMetricsTieBreakers>
 </document>

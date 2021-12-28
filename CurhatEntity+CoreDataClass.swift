@@ -8,9 +8,22 @@
 //
 
 import Foundation
+import UIKit
 import CoreData
 
 @objc(CurhatEntity)
 public class CurhatEntity: NSManagedObject {
-
+    convenience init?(idCurhat: Double, curhat: String, isHidden: Bool) {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        
+        guard let context = appDelegate?.persistentContainer.viewContext else{
+            return nil
+        }
+        
+        self.init(entity: CurhatEntity.entity(), insertInto: context)
+        
+        self.idCurhat = idCurhat
+        self.curhat = curhat
+        self.isHidden = isHidden
+    }
 }

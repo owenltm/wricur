@@ -15,20 +15,19 @@ class OwnViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet var curhatTableView: UITableView!
     
-    var curhatList = [Curhat]()
+    var curhatList = [CurhatEntity]()
     var account: AccountEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Dummy data
-        //curhatList.append(Curhat(name: "Alex", body: "This is an example of a text tht is supposed to be long but i dont really prepare a sample text therefore im putting this random words as a placeholder", isHidden: false))
         
         curhatTableView.dataSource = self
         
         context = appDelegate.persistentContainer.viewContext
         
-        //curhatList = loadCurhatFromId(id: 2)
+        print("loading curhat from \(account?.fullname)")
+        
+        curhatList = loadOwnedCurhat()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,32 +46,17 @@ class OwnViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-    func loadCurhatFromId(id: Int)->[Curhat] {
-        var fetchedCurhat = [Curhat]()
-        
-        let req = NSFetchRequest<NSFetchRequestResult>(entityName: "CurhatEntity")
-        let predicate = NSPredicate(format: "idAccount == %@", "\(id)")
-        
-       req.predicate = predicate
-        
-        do {
-            let results = try context.fetch(req) as! [NSManagedObject]
-            
-            for item in results {
-                let idCurhat = item.value(forKey: "idCurhat") as! Int
-                let idAccount = item.value(forKey: "idAccount") as! Int
-                let curhat = item.value(forKey: "Curhat") as! String
-                let isHidden = item.value(forKey: "isHidden") as! Bool
-                
-                fetchedCurhat.append(Curhat(idCurhat: idCurhat, idUser: idAccount, body: curhat, isHidden: isHidden))
-                
-                print("(FETCHED) \(idCurhat)")
+    func loadOwnedCurhat()->[CurhatEntity] {
+        if let fetchedCurhat = account?.curhatList {
+            for item in fetchedCurhat {
+                print(item.account!.fullname! as String)
             }
-        } catch {
-            print("ERROR) Failed loading data")
+            
+            return fetchedCurhat
+        } else {
+            print("Welp")
+            return [CurhatEntity]()
         }
-        
-        return fetchedCurhat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,8 +68,8 @@ class OwnViewController: UIViewController, UITableViewDataSource {
         
         let curCurhat = curhatList[indexPath.row]
         
-        cell.titleLbl.text = "fix this name"
-        cell.subtitleLbl.text = curCurhat.body
+        cell.titleLbl.text =  curCurhat.isHidden ? "Anonymous" : curCurhat.account?.fullname
+        cell.subtitleLbl.text = curCurhat.curhat
         
         return cell
     }

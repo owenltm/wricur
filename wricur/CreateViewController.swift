@@ -22,6 +22,8 @@ class CreateViewController: UIViewController, UITextViewDelegate {
         TextView.textColor = .lightGray
         TextView.text = "Write your text here"
         TextView.delegate = self
+        
+        print("create of \(account?.fullname!)")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -15,6 +15,8 @@ class Register_Scene: UIViewController {
     @IBOutlet var fullnameTextField: UITextField!
     @IBOutlet var dobDatePicker: UIDatePicker!
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,12 +30,15 @@ class Register_Scene: UIViewController {
         let fullname = fullnameTextField.text!
         let dob = dobDatePicker.date
         
+        let userCount = defaults.double(forKey: "userCount")
+        
         //validasi form
         
-        var newAccount = AccountEntity(idAccount: 0.0, email: email, password: password, fullname: fullname, dob: dob)
+        var newAccount = AccountEntity(idAccount: userCount, email: email, password: password, fullname: fullname, dob: dob)
         
         do {
             try newAccount?.managedObjectContext?.save()
+            defaults.setValue(userCount + 1, forKey: "userCount")
             print("Berhasil register")
         } catch {
             print("ERROR registering account")

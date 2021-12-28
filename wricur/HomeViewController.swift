@@ -15,73 +15,58 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet var curhatTableView: UITableView!
     
-    var curhatList = [Curhat]()
+    var curhatList = [CurhatEntity]()
     var account: AccountEntity?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Dummy data
-        //curhatList.append(Curhat(name: "Alex", body: "This is an example of a curhat text that is supposed to be long but i dont really prepare a sample text therefore im putting this random words as a placeholder", isHidden: false))
-        // test change
         
         curhatTableView.dataSource = self
         
         context = appDelegate.persistentContainer.viewContext
         
         //saveDummy()
-        //curhatList = loadCurhat()
+        
+        print("home of \(account?.fullname!)")
+        
+        curhatList = loadCurhat()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToOwned" {
             let dest = segue.destination as! OwnViewController
             
-            dest.account = account
+            dest.account = account!
         } else if segue.identifier == "goToCreate" {
             let dest = segue.destination as! CreateViewController
             
-            dest.account = account
+            dest.account = account!
         } else if segue.identifier == "goToProfile" {
             let dest = segue.destination as! ProfileViewController
             
-            dest.account = account
+            dest.account = account!
         }
     }
     
     func saveDummy()->Void {
-        let entity = NSEntityDescription.entity(forEntityName: "CurhatEntity", in: context)
-        let newCurhat = NSManagedObject(entity: entity!, insertInto: context)
-        
-        newCurhat.setValue(3, forKey: "idCurhat")
-        newCurhat.setValue(2, forKey: "idAccount")
-        newCurhat.setValue("222 test long text in place of a curhat that i still havent prepared so i put this long text as a placeholder", forKey: "curhat")
-        newCurhat.setValue(false, forKey: "isHidden")
+        var dummy1 = CurhatEntity(idCurhat: 0, curhat: "\(account?.fullname!) test long text in place of a curhat that i still havent prepared so i put this long text as a placeholder", isHidden: false)
         
         do {
-            try context.save()
-            print("(LOG) dummy added")
+            account?.addToCurhats(dummy1!)
+            try dummy1?.managedObjectContext?.save()
+            print("Berhasil buat dummy")
         } catch {
-            print("(ERROR) Failed saving data")
+            print("ERROR registering account")
         }
     }
     
-    func loadCurhat()->[Curhat] {
-        var fetchedCurhat = [Curhat]()
+    func loadCurhat()->[CurhatEntity] {
+        var fetchedCurhat = [CurhatEntity]()
         
-        let req = NSFetchRequest<NSFetchRequestResult>(entityName: "CurhatEntity")
+        let req: NSFetchRequest<CurhatEntity> = CurhatEntity.fetchRequest()
         
         do {
-            let results = try context.fetch(req) as! [NSManagedObject]
-            
-            for item in results {
-                let idCurhat = item.value(forKey: "idCurhat") as! Int
-                let idAccount = item.value(forKey: "idAccount") as! Int
-                let curhat = item.value(forKey: "Curhat") as! String
-                let isHidden = item.value(forKey: "isHidden") as! Bool
-                
-                fetchedCurhat.append(Curhat(idCurhat: idCurhat, idUser: idAccount, body: curhat, isHidden: isHidden))
-            }
+            fetchedCurhat = try context.fetch(req)
         } catch {
             print("ERROR) Failed loading data")
         }
@@ -98,8 +83,8 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         
         let curCurhat = curhatList[indexPath.row]
         
-        cell.titleLbl.text = "fix this name"
-        cell.subtitleLbl.text = curCurhat.body
+        cell.titleLbl.text =  curCurhat.isHidden ? "Anonymous" : curCurhat.account?.fullname
+        cell.subtitleLbl.text = curCurhat.curhat!
         
         return cell
     }

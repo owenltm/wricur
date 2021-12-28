@@ -13,6 +13,11 @@ import CoreData
 
 @objc(AccountEntity)
 public class AccountEntity: NSManagedObject {
+    
+    var curhatList: [CurhatEntity]? {
+        return self.curhats?.array as? [CurhatEntity]
+    }
+    
     convenience init?(idAccount: Double, email: String, password: String, fullname: String, dob: Date) {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         
