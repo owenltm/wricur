@@ -10,6 +10,10 @@
 		05204C11276DDC49001F46E5 /* Login Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05204C10276DDC49001F46E5 /* Login Scene.swift */; };
 		05204C13276DDC95001F46E5 /* Register Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05204C12276DDC95001F46E5 /* Register Scene.swift */; };
 		B77A4E6D275F737D00B2A2DF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77A4E6C275F737D00B2A2DF /* ProfileViewController.swift */; };
+		CE7003D4277AE23F001780F0 /* AccountEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7003D0277AE23F001780F0 /* AccountEntity+CoreDataClass.swift */; };
+		CE7003D5277AE23F001780F0 /* AccountEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7003D1277AE23F001780F0 /* AccountEntity+CoreDataProperties.swift */; };
+		CE7003D6277AE23F001780F0 /* CurhatEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7003D2277AE23F001780F0 /* CurhatEntity+CoreDataClass.swift */; };
+		CE7003D7277AE23F001780F0 /* CurhatEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7003D3277AE23F001780F0 /* CurhatEntity+CoreDataProperties.swift */; };
 		CE788632275DD1FD00391829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE788631275DD1FD00391829 /* AppDelegate.swift */; };
 		CE788634275DD1FD00391829 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE788633275DD1FD00391829 /* ViewController.swift */; };
 		CE788637275DD1FD00391829 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE788635275DD1FD00391829 /* Main.storyboard */; };
@@ -28,6 +32,10 @@
 		05204C10276DDC49001F46E5 /* Login Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login Scene.swift"; sourceTree = "<group>"; };
 		05204C12276DDC95001F46E5 /* Register Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Register Scene.swift"; sourceTree = "<group>"; };
 		B77A4E6C275F737D00B2A2DF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		CE7003D0277AE23F001780F0 /* AccountEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CE7003D1277AE23F001780F0 /* AccountEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CE7003D2277AE23F001780F0 /* CurhatEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurhatEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CE7003D3277AE23F001780F0 /* CurhatEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurhatEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE78862E275DD1FD00391829 /* wricur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wricur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE788631275DD1FD00391829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE788633275DD1FD00391829 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +66,10 @@
 		CE788625275DD1FC00391829 = {
 			isa = PBXGroup;
 			children = (
+				CE7003D0277AE23F001780F0 /* AccountEntity+CoreDataClass.swift */,
+				CE7003D1277AE23F001780F0 /* AccountEntity+CoreDataProperties.swift */,
+				CE7003D2277AE23F001780F0 /* CurhatEntity+CoreDataClass.swift */,
+				CE7003D3277AE23F001780F0 /* CurhatEntity+CoreDataProperties.swift */,
 				CE788630275DD1FD00391829 /* wricur */,
 				CE78862F275DD1FD00391829 /* Products */,
 			);
@@ -165,10 +177,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7003D4277AE23F001780F0 /* AccountEntity+CoreDataClass.swift in Sources */,
 				E6545A99275FBC49005C7A69 /* CreateViewController.swift in Sources */,
 				CE78863A275DD1FD00391829 /* wricur.xcdatamodeld in Sources */,
 				CE99A9B9276491C0007FB0AF /* CurhatTableViewCell.swift in Sources */,
+				CE7003D5277AE23F001780F0 /* AccountEntity+CoreDataProperties.swift in Sources */,
 				E64DE7182761142C0007AC0B /* EditViewController.swift in Sources */,
+				CE7003D6277AE23F001780F0 /* CurhatEntity+CoreDataClass.swift in Sources */,
 				CED24B6827648C530020038F /* OwnViewController.swift in Sources */,
 				CE788634275DD1FD00391829 /* ViewController.swift in Sources */,
 				05204C13276DDC95001F46E5 /* Register Scene.swift in Sources */,
@@ -177,6 +192,7 @@
 				CED24B642764887D0020038F /* HomeViewController.swift in Sources */,
 				CED24B66276489F50020038F /* Curhat.swift in Sources */,
 				CE788632275DD1FD00391829 /* AppDelegate.swift in Sources */,
+				CE7003D7277AE23F001780F0 /* CurhatEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

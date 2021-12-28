@@ -9,22 +9,36 @@
 import UIKit
 
 class Register_Scene: UIViewController {
-
+    @IBOutlet var emailTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var confirmPasswordTextField: UITextField!
+    @IBOutlet var fullnameTextField: UITextField!
+    @IBOutlet var dobDatePicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func register(_ sender: Any) {
+        let email = emailTextField.text!
+        let password = passwordTextField.text!
+        let confirmPassword = confirmPasswordTextField.text!
+        let fullname = fullnameTextField.text!
+        let dob = dobDatePicker.date
+        
+        //validasi form
+        
+        var newAccount = AccountEntity(idAccount: 0, email: email, password: password, fullname: fullname, dob: dob)
+        
+        do {
+            try newAccount?.managedObjectContext?.save()
+            print("Berhasil register")
+        } catch {
+            print("ERROR registering account")
+        }
     }
-    */
+    
 
 }
