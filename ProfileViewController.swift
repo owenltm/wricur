@@ -41,10 +41,19 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var fullName: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var dob: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        fullName.text = account?.fullname
+        email.text = account?.email
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let result = dateFormatter.string(from: account?.dob as! Date )
+        dob.text = result
     }
     
     var account: AccountEntity?
@@ -62,7 +71,9 @@ class ProfileViewController: UIViewController {
             let dest = segue.destination as! CreateViewController
             
             dest.account = account
-        }
+        } 
     }
+    
+    
 
 }

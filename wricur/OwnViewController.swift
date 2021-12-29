@@ -9,25 +9,57 @@
 import UIKit
 import CoreData
 
-class OwnViewController: UIViewController, UITableViewDataSource {
+class OwnViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var context: NSManagedObjectContext!
     
     @IBOutlet var curhatTableView: UITableView!
     
     var curhatList = [CurhatEntity]()
+    var account2 = [AccountEntity]()
     var account: AccountEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         curhatTableView.dataSource = self
-        
+        curhatTableView.delegate = self
         context = appDelegate.persistentContainer.viewContext
+        //        let account = AccountEntity(idAccount: 1, password: "andy", username: "andy")
+        //
+        //                do {
+        //                    try account?.managedObjectContext?.save()
+        //                } catch  {
+        //
+        //                }
+        let date = Date()
+        let account2 = AccountEntity(idAccount: 1, email: "andy", password: "andy", fullname: "andy", dob: date)
+        do{
+            try account2?.managedObjectContext?.save()
+        } catch {
+            
+        }
         
-        print("loading curhat from \(account?.fullname)")
+        //        print("loading curhat from \(account?.fullname)")
         
         curhatList = loadOwnedCurhat()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fecthRequest: NSFetchRequest<AccountEntity> = AccountEntity.fetchRequest()
+        
+        do {
+            account2 =  try managedContext.fetch(fecthRequest)
+        } catch  {
+            
+        }
+        account = account2[0]
+        curhatList = loadOwnedCurhat()
+        self.curhatTableView.reloadData()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,7 +75,12 @@ class OwnViewController: UIViewController, UITableViewDataSource {
             let dest = segue.destination as! ProfileViewController
             
             dest.account = account
+        } else if segue.identifier == "goToEdit" {
+            let dest = segue.destination as! CreateViewController
+            let selectedRow = self.curhatTableView.indexPathForSelectedRow?.row
+            dest.curhat = account!.curhatList?[selectedRow!]
         }
+        
     }
     
     func loadOwnedCurhat()->[CurhatEntity] {
@@ -59,6 +96,35 @@ class OwnViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToEdit", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            deleteCurhat(at: indexPath)
+        }
+    }
+    
+    func deleteCurhat(at indexPath: IndexPath){
+        let DCurhat = account?.curhatList?[indexPath.row]
+        
+        let managedContext = DCurhat!.managedObjectContext
+        managedContext!.delete(DCurhat!)
+        do {
+            try managedContext!.save()
+            curhatList = loadOwnedCurhat()
+
+            curhatTableView.reloadData()
+        } catch  {
+            
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return curhatList.count
     }
@@ -68,7 +134,7 @@ class OwnViewController: UIViewController, UITableViewDataSource {
         
         let curCurhat = curhatList[indexPath.row]
         
-        cell.titleLbl.text =  curCurhat.isHidden ? "Anonymous" : curCurhat.account?.fullname
+        cell.titleLbl.text =  curCurhat.isHidden ? curCurhat.account?.fullname : "Anonymous"
         cell.subtitleLbl.text = curCurhat.curhat
         
         return cell
