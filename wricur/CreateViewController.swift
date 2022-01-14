@@ -12,6 +12,7 @@ class CreateViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var Reveal: UISwitch!
     @IBOutlet weak var TextView: UITextView!
+    @IBOutlet weak var Titles: UILabel!
     
     var account: AccountEntity?
     var curhat: CurhatEntity?
@@ -27,9 +28,13 @@ class CreateViewController: UIViewController, UITextViewDelegate {
         if (curhat?.isHidden == true) {Reveal.isOn = true }
         else {Reveal.isOn = false
         }
-        TextView.text = curhat?.curhat
+        if curhat?.curhat != nil{
+            Titles.text = "Edit"
+            TextView.text = curhat?.curhat
+        }
         if TextView.text != "Write your text here" {
-            TextView.textColor = .black	
+            TextView.textColor = .black
+         
         }
         
     }

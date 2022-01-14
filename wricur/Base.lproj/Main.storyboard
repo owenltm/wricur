@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ASm-AN-MKk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bdS-gL-qa1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -676,7 +676,7 @@
                                     <constraint firstAttribute="width" constant="110" id="eDx-wA-Q1O"/>
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
-                                <state key="normal" title="Share" image="share">
+                                <state key="normal" title="Save" image="share">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -799,6 +799,7 @@
                     <connections>
                         <outlet property="Reveal" destination="cte-49-or1" id="S5b-7w-8Ja"/>
                         <outlet property="TextView" destination="3Qf-Rm-KIu" id="IUl-1v-w2s"/>
+                        <outlet property="Titles" destination="pry-Nt-tix" id="g3E-Wm-E9h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Orw-Fl-rV1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1049,15 +1050,15 @@
     <resources>
         <image name="Create" width="30" height="29"/>
         <image name="Home" width="28" height="27"/>
-        <image name="logo" width="150" height="150"/>
+        <image name="logo" width="90" height="90"/>
         <image name="owncurhat" width="26" height="24"/>
         <image name="profile" width="27" height="26"/>
         <image name="share" width="37" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yPI-B8-NR6"/>
+        <segue reference="Miw-fi-7tJ"/>
         <segue reference="KWE-zc-y6t"/>
-        <segue reference="MMX-dl-JOW"/>
+        <segue reference="vnM-iS-mHt"/>
         <segue reference="Dzf-wS-OUG"/>
         <segue reference="6sG-yQ-sEh"/>
     </inferredMetricsTieBreakers>

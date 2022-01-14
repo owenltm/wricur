@@ -83,7 +83,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         
         let curCurhat = curhatList[indexPath.row]
         
-        cell.titleLbl.text =  curCurhat.isHidden ? "Anonymous" : curCurhat.account?.fullname
+        cell.titleLbl.text =  curCurhat.isHidden ? curCurhat.account?.fullname : "Anonymous"
         cell.subtitleLbl.text = curCurhat.curhat!
         
         return cell

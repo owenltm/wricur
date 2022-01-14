@@ -24,7 +24,6 @@
 		CED24B642764887D0020038F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED24B632764887D0020038F /* HomeViewController.swift */; };
 		CED24B66276489F50020038F /* Curhat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED24B65276489F50020038F /* Curhat.swift */; };
 		CED24B6827648C530020038F /* OwnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED24B6727648C530020038F /* OwnViewController.swift */; };
-		E64DE7182761142C0007AC0B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64DE7172761142C0007AC0B /* EditViewController.swift */; };
 		E6545A99275FBC49005C7A69 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545A98275FBC49005C7A69 /* CreateViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		CED24B632764887D0020038F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CED24B65276489F50020038F /* Curhat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curhat.swift; sourceTree = "<group>"; };
 		CED24B6727648C530020038F /* OwnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnViewController.swift; sourceTree = "<group>"; };
-		E64DE7172761142C0007AC0B /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		E6545A98275FBC49005C7A69 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,7 +88,6 @@
 				CE788633275DD1FD00391829 /* ViewController.swift */,
 				CE788635275DD1FD00391829 /* Main.storyboard */,
 				CE78863B275DD1FF00391829 /* Assets.xcassets */,
-				E64DE7172761142C0007AC0B /* EditViewController.swift */,
 				CE78863D275DD1FF00391829 /* LaunchScreen.storyboard */,
 				E6545A98275FBC49005C7A69 /* CreateViewController.swift */,
 				CE788640275DD1FF00391829 /* Info.plist */,
@@ -182,7 +179,6 @@
 				CE78863A275DD1FD00391829 /* wricur.xcdatamodeld in Sources */,
 				CE99A9B9276491C0007FB0AF /* CurhatTableViewCell.swift in Sources */,
 				CE7003D5277AE23F001780F0 /* AccountEntity+CoreDataProperties.swift in Sources */,
-				E64DE7182761142C0007AC0B /* EditViewController.swift in Sources */,
 				CE7003D6277AE23F001780F0 /* CurhatEntity+CoreDataClass.swift in Sources */,
 				CED24B6827648C530020038F /* OwnViewController.swift in Sources */,
 				CE788634275DD1FD00391829 /* ViewController.swift in Sources */,
