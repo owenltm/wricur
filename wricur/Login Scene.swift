@@ -26,12 +26,39 @@ class Login_Scene: UIViewController {
         printAllUser()
     }
     
+    func dismissKeyboard() {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismissKeyboard()
+    }
+    
+    @IBAction func editingEnd(_ sender: Any) {
+        dismissKeyboard()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToHome" {
             let dest = segue.destination as! HomeViewController
             
             dest.account = account!
         }
+    }
+    
+    @IBAction func unwindToLogin(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source
+        // Use data from the view controller which initiated the unwind segue
+    }
+    
+    func alert(title:String ,msg:String, handler:((UIAlertAction)->Void)?){
+        let alert = UIAlertController(title:title, message: msg, preferredStyle: .actionSheet)
+        let okaction = UIAlertAction(title: "OK", style: .default, handler: handler)
+        alert.view.backgroundColor = UIColor.white
+        alert.addAction(okaction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func doLogin(_ sender: Any) {
@@ -46,17 +73,24 @@ class Login_Scene: UIViewController {
         do {
             let results = try context.fetch(req)
             
-            for item in results {
-                if item.password == password {
-                    //email ada passwordnya bener
-                    
-                    //print("Berhasil Login")
-                    account = item
-                    performSegue(withIdentifier: "goToHome", sender: self)
-                } else {
-                    print("password salah")
+            if results.count > 0 {
+                for item in results {
+                    if item.password == password {
+                        //email ada passwordnya bener
+                        
+                        //print("Berhasil Login")
+                        account = item
+                        performSegue(withIdentifier: "goToHome", sender: self)
+                        
+                        return
+                    } else {
+                        print("password salah")
+                        alert(title: "Failed", msg: "Invalid username/password", handler: nil)
+                    }
                 }
             }
+            
+            
         } catch {
             print("ERROR) Failed loading data")
         }

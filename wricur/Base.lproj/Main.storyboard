@@ -209,6 +209,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingEnd:" destination="bdS-gL-qa1" eventType="editingDidEnd" id="Xd8-Ls-d4C"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVw-5R-gzJ">
                                 <rect key="frame" x="16" y="345" width="88" height="21"/>
@@ -220,7 +223,10 @@
                                 <rect key="frame" x="16" y="374" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="editingEnd:" destination="bdS-gL-qa1" eventType="editingDidEnd" id="LWc-Bo-1Fl"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33o-da-F1j">
                                 <rect key="frame" x="139" y="607" width="97" height="34"/>
@@ -323,6 +329,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingEnd:" destination="k9n-RZ-mad" eventType="editingDidEnd" id="2v7-55-Xlb"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hz-io-Gop">
                                 <rect key="frame" x="16" y="292" width="102" height="21"/>
@@ -334,7 +343,10 @@
                                 <rect key="frame" x="16" y="319" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="editingEnd:" destination="k9n-RZ-mad" eventType="editingDidEnd" id="Orf-uX-eK7"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9Y-Lz-EQi">
                                 <rect key="frame" x="16" y="353" width="149" height="21"/>
@@ -346,7 +358,10 @@
                                 <rect key="frame" x="16" y="380" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="editingEnd:" destination="k9n-RZ-mad" eventType="editingDidEnd" id="9Th-JZ-q4V"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQf-mB-e3o">
                                 <rect key="frame" x="16" y="414" width="90" height="21"/>
@@ -359,6 +374,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingEnd:" destination="k9n-RZ-mad" eventType="editingDidEnd" id="sDl-wy-lje"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHa-le-Mfu">
                                 <rect key="frame" x="16" y="477" width="106" height="21"/>
@@ -453,9 +471,11 @@
                         <outlet property="emailTextField" destination="7Bj-bv-pjW" id="0e5-Mm-I42"/>
                         <outlet property="fullnameTextField" destination="H1X-6F-kyZ" id="LSq-DV-UIs"/>
                         <outlet property="passwordTextField" destination="PDe-uv-hO8" id="u5l-OV-Ggt"/>
+                        <segue destination="Yan-D9-HmU" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLogin:" id="SPe-HK-VGD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gi-Pv-la6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Yan-D9-HmU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1794" y="1657"/>
         </scene>
@@ -1050,15 +1070,15 @@
     <resources>
         <image name="Create" width="30" height="29"/>
         <image name="Home" width="28" height="27"/>
-        <image name="logo" width="90" height="90"/>
+        <image name="logo" width="150" height="150"/>
         <image name="owncurhat" width="26" height="24"/>
         <image name="profile" width="27" height="26"/>
         <image name="share" width="37" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Miw-fi-7tJ"/>
+        <segue reference="yPI-B8-NR6"/>
         <segue reference="KWE-zc-y6t"/>
-        <segue reference="vnM-iS-mHt"/>
+        <segue reference="MMX-dl-JOW"/>
         <segue reference="Dzf-wS-OUG"/>
         <segue reference="6sG-yQ-sEh"/>
     </inferredMetricsTieBreakers>
