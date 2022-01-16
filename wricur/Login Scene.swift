@@ -65,34 +65,50 @@ class Login_Scene: UIViewController {
         let email = emailTextField.text!
         let password = passwordTextField.text!
         
-        let req: NSFetchRequest<AccountEntity> = AccountEntity.fetchRequest()
-        let predicate = NSPredicate(format: "email == %@", "\(email)")
+        var valid = true
         
-        req.predicate = predicate
+        //validasi form
+        if !email.contains("@") {
+            valid = false
+            alert(title: "Invalid email", msg: "Email must be valid", handler: nil)
+        }
         
-        do {
-            let results = try context.fetch(req)
+        if password.count < 8 {
+            valid = false
+            alert(title: "Invalid password", msg: "Password must be atleast 8 characters", handler: nil)
+        }
+        
+        if valid {
+            let req: NSFetchRequest<AccountEntity> = AccountEntity.fetchRequest()
+            let predicate = NSPredicate(format: "email == %@", "\(email)")
             
-            if results.count > 0 {
-                for item in results {
-                    if item.password == password {
-                        //email ada passwordnya bener
-                        
-                        //print("Berhasil Login")
-                        account = item
-                        performSegue(withIdentifier: "goToHome", sender: self)
-                        
-                        return
-                    } else {
-                        print("password salah")
-                        alert(title: "Failed", msg: "Invalid username/password", handler: nil)
+            req.predicate = predicate
+            
+            do {
+                let results = try context.fetch(req)
+                
+                if results.count > 0 {
+                    for item in results {
+                        if item.password == password {
+                            //email ada passwordnya bener
+                            
+                            //print("Berhasil Login")
+                            account = item
+                            performSegue(withIdentifier: "goToHome", sender: self)
+                            
+                            return
+                        } else {
+                            print("password salah")
+                            alert(title: "Failed", msg: "Invalid username/password", handler: nil)
+                        }
                     }
                 }
+                
+                alert(title: "Failed", msg: "Invalid username/password", handler: nil)
+                
+            } catch {
+                print("ERROR) Failed loading data")
             }
-            
-            
-        } catch {
-            print("ERROR) Failed loading data")
         }
         
     }
