@@ -27,7 +27,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         
         //saveDummy()
         
-        print("home of \(account?.fullname!)")
+        print("home of \(account?.dob!)")
         
         curhatList = loadCurhat()
     }

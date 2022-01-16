@@ -19,7 +19,7 @@ class Register_Scene: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -53,7 +53,7 @@ class Register_Scene: UIViewController {
         let confirmPassword = confirmPasswordTextField.text!
         let fullname = fullnameTextField.text!
         let dob = dobDatePicker.date
-        
+        print(dob)
         let userCount = defaults.double(forKey: "userCount")
         
         var valid = true
@@ -87,12 +87,14 @@ class Register_Scene: UIViewController {
         if Helper.getYearDiff(date1: dob, date2: Date()) < 13 {
             valid = false
             alert(title: "Invalid date of birth", msg: "You must be atleast 13 years old to use this app", handler: nil)
+            print(dob)
         }
         
-        var newAccount = AccountEntity(idAccount: userCount, email: email, password: password, fullname: fullname, dob: dob)
         
         if valid {
             do {
+                var newAccount = AccountEntity(idAccount: userCount, email: email, password: password, fullname: fullname, dob: dob)
+                
                 try newAccount?.managedObjectContext?.save()
                 defaults.setValue(userCount + 1, forKey: "userCount")
                 print("Berhasil register")
@@ -104,5 +106,5 @@ class Register_Scene: UIViewController {
         }
     }
     
-
+    
 }

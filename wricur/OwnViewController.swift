@@ -25,38 +25,17 @@ class OwnViewController: UIViewController, UITableViewDataSource, UITableViewDel
         curhatTableView.dataSource = self
         curhatTableView.delegate = self
         context = appDelegate.persistentContainer.viewContext
-        //        let account = AccountEntity(idAccount: 1, password: "andy", username: "andy")
-        //
-        //                do {
-        //                    try account?.managedObjectContext?.save()
-        //                } catch  {
-        //
-        //                }
-        let date = Date()
-        let account2 = AccountEntity(idAccount: 1, email: "andy", password: "andy", fullname: "andy", dob: date)
-        do{
-            try account2?.managedObjectContext?.save()
-        } catch {
-            
-        }
-        
-        //        print("loading curhat from \(account?.fullname)")
-        
+     
         curhatList = loadOwnedCurhat()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fecthRequest: NSFetchRequest<AccountEntity> = AccountEntity.fetchRequest()
-        
-        do {
-            account2 =  try managedContext.fetch(fecthRequest)
-        } catch  {
-            
-        }
-        account = account2[0]
+//        let managedContext = appDelegate.persistentContainer.viewContext
+//        let fecthRequest: NSFetchRequest<AccountEntity> = AccountEntity.fetchRequest()
+//
+       
         curhatList = loadOwnedCurhat()
         self.curhatTableView.reloadData()
         
@@ -79,6 +58,7 @@ class OwnViewController: UIViewController, UITableViewDataSource, UITableViewDel
             let dest = segue.destination as! CreateViewController
             let selectedRow = self.curhatTableView.indexPathForSelectedRow?.row
             dest.curhat = account!.curhatList?[selectedRow!]
+            dest.account = account
         }
         
     }
